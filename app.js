@@ -2,8 +2,8 @@ var express = require('express');
 var app = express();
 var index = require('./routes/index');
 
-app.use(express.static(__dirname + '/bin'));
-app.use(express.static(__dirname + '/public/stylesheets'));
+app.use('/bin', express.static(__dirname + '/bin'));
+app.use('/stylesheets', express.static(__dirname + '/public/stylesheets'));
 
 app.use('/', index);
 
