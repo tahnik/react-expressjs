@@ -1,12 +1,12 @@
 # Behold the React + Express + Webpack + Babel Boilerplate
 
-This is a boilerplace to use ReactJS ExpressJS and Redux in a project.
+This is a boilerplate to use ReactJS ExpressJS and Redux in a project.
 Althought Redux is not included, the file structure for Redux is setup so it'll ease your development if you want to use it.
 
 - [ReactJS] - The state based framework for your Views
 - [Babel] - The compiler to compile your JS files with es6, es7, JSX syntax to regular javascript
 - [Webpack] - The module binder which takes all your JS files from different directories and compiles them into a single app.bundle.js (you can change the filename of course) so you can include it in a HTML page
-- [ExpressJS] - The node framework to server your views to the world when they hit the server at example.com or example.com/awesome.html
+- [ExpressJS] - The node framework to serve your views to the world when they hit the server at example.com or example.com/awesome.html
 
 #Installation
 Just close this repo or download the zip file. cd into the directory and run
