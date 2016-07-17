@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import Main from './src/components/main';
+import reducers from './src/reducers/index';
 
-class Index extends Component {
-    render() {
-        return(
-            <div className="helloWorld">
-                <h1 className="helloWorldText">Hello World</h1>
-            </div>
-        )
-    }
-}
 
-ReactDOM.render(<Index />, document.getElementById("reactbody"));
+ReactDOM.render(
+    <Provider store={createStore(reducers)}>
+        <Main />
+    </Provider>,
+    document.getElementById("reactbody")
+);

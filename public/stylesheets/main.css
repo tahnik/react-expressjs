@@ -1,14 +1,9 @@
-.helloWorld{
+#reactbody{
     width: 100vw;
     height: 100vh;
     text-align: center;
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    transform-style: preserve-3d;
 }
-.helloWorldText{
+.main{
     position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 10vw;
+    margin-top: 5vh;
 }
