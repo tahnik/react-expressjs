@@ -1,6 +1,6 @@
 {
   "name": "generator-react-express-webpack-babel",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Boilerplate for ReactJS project with ExpressJS server. It uses webpack and babel",
   "main": "app.js",
   "scripts": {
