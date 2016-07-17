@@ -1,5 +1,5 @@
 {
-	"name": "react-express-webpack-babel",
+	"name": "generator-react-express-webpack-babel",
 	"version": "1.0.0",
 	"description": "Boilerplate for ReactJS project with ExpressJS server. It uses webpack and babel",
 	"main": "app.js",
@@ -15,7 +15,8 @@
 		"react",
 		"express",
 		"webpack",
-		"babel"
+		"babel",
+		"yeoman-generator"
 	],
 	"author": "Tahnik Mustasin",
 	"license": "ISC",
