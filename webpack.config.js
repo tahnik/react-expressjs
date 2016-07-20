@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+var nodeExternals = require('webpack-node-externals');
 
 module.exports = {
     entry: './views/index.js',
@@ -18,7 +19,7 @@ module.exports = {
     resolve: {
         extensions: ['', '.js', '.jsx']
     }
-    // //If you want to minify your files uncomment this
+    //If you want to minify your files uncomment this
     // ,
     // plugins: [
     //     new webpack.optimize.UglifyJsPlugin({

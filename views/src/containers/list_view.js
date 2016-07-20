@@ -32,7 +32,7 @@ class ListView extends Component {
 
 function mapStateToProps(state) {
     return {
-        lists: state.lists
+        lists: state.lists.all
     };
 }
 

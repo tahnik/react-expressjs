@@ -1,10 +1,8 @@
 import { combineReducers } from 'redux';
-import ListItems from './list_items';
-import ListItemActive from './list_item_active';
+import Lists from './lists';
 
 const rootReducer = combineReducers({
-    lists: ListItems,
-    activeItem: ListItemActive
+    lists: Lists
 })
 
 export default rootReducer;

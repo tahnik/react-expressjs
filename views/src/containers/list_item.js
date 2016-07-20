@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 
 class ListItem extends Component{
     render(){
@@ -15,6 +16,9 @@ class ListItem extends Component{
             <div>
                 <h3> { this.props.activeItem.name } </h3>
                 <p>{ this.props.activeItem.description }</p>
+                <Link to={"view?name=" + this.props.activeItem.name }>
+                    <button type="button" className="btn btn-primary">Read More</button>
+                </Link>
             </div>
         )
     }
@@ -22,7 +26,7 @@ class ListItem extends Component{
 
 function mapStateToProps(state) {
     return {
-        activeItem: state.activeItem
+        activeItem: state.lists.item
     };
 }
 
