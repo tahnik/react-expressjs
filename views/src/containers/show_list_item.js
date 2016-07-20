@@ -5,12 +5,11 @@ import { Link } from 'react-router';
 
 class ShowListItem extends Component {
 	componentWillMount(){
-		this.props.getListItem(this.props.location.query.name);
+		this.props.getListItem(this.props.params.name);
 	}
 	render(){
 		const { item } = this.props;
 		if(!item) {
-			console.log("Null");
 			return (<div>Loading...</div>)
 		}
 

@@ -28467,7 +28467,7 @@
 	        _reactRouter.Route,
 	        { path: '/', component: _header2.default },
 	        _react2.default.createElement(_reactRouter.IndexRoute, { component: _main2.default }),
-	        _react2.default.createElement(_reactRouter.Route, { path: 'view', component: _show_list_item2.default })
+	        _react2.default.createElement(_reactRouter.Route, { path: 'view/:name', component: _show_list_item2.default })
 	    )
 	);
 
@@ -28513,7 +28513,7 @@
 		_createClass(ShowListItem, [{
 			key: 'componentWillMount',
 			value: function componentWillMount() {
-				this.props.getListItem(this.props.location.query.name);
+				this.props.getListItem(this.props.params.name);
 			}
 		}, {
 			key: 'render',
@@ -28521,7 +28521,6 @@
 				var item = this.props.item;
 
 				if (!item) {
-					console.log("Null");
 					return _react2.default.createElement(
 						'div',
 						null,
