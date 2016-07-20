@@ -16,7 +16,7 @@ class ListItem extends Component{
             <div>
                 <h3> { this.props.activeItem.name } </h3>
                 <p>{ this.props.activeItem.description }</p>
-                <Link to={"view?name=" + this.props.activeItem.name }>
+                <Link to={"view/" + this.props.activeItem.name }>
                     <button type="button" className="btn btn-primary">Read More</button>
                 </Link>
             </div>

@@ -592,7 +592,7 @@
 	                ),
 	                _react2.default.createElement(
 	                    _reactRouter.Link,
-	                    { to: "view?name=" + this.props.activeItem.name },
+	                    { to: "view/" + this.props.activeItem.name },
 	                    _react2.default.createElement(
 	                        'button',
 	                        { type: 'button', className: 'btn btn-primary' },
