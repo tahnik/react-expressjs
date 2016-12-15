@@ -50,21 +50,13 @@ Once you've done that you fire up a terminal in that directory and run webpack. 
 
 So now you have a file in your bin which is app.bundle.js. This is basically your whole react app into one file. And you also have a file server.bundle.js which your expressJS server.
 
-Now there is two way of serving the app to the world:
-
-### Serve your app without server side rendering
-
-To serve your react app without server side rendering you need an index.html page which I located inside public folder. You public folders holds all the static files like your stylesheets. In this index.html you include the app.bundle.js which was just created by webpack. So now if you click your index.html it will open up your app you created with ReactJS. Cool!
-
-Now your index.html page needs to be SERVED! To server this index.html page along with other static contents like images, stylesheets you need ExpressJS. Express will server your app based on your route. For now I have kept it simple so it just serves some static contents and '/' route.
-
 ### Serve your app with server side rendering (And why it is important)
 
 To serve your app with server side rendering, all you need to do run npm start. The way it works is that the expressJS server (app.js) renders the app on the server and serves it to the public.
 
 I know it's confusing. Hold on!
 
-When the react is served without server side rendering (like the way described above), a browser will download the index.html and load the app.bundle.js in real time. When the app.bundle.js have finished loading up it will render the page the way you have programmed. This initial render takes longer than usual and can be a nightmare for SEO or search engines. Also, a big reason of using react is how fast it is right?!
+When the react is served without server side rendering, a browser will download the index.html and load the app.bundle.js in real time. When the app.bundle.js have finished loading up it will render the page the way you have programmed. This initial render takes longer than usual and can be a nightmare for SEO or search engines. Also, a big reason of using react is how fast it is right?!
 
 With server side rendering, the expressJS server will use the react engine to take your app.bundle.js and render the necessary parts of your webpage to plain html string. So the client/public will receive the same index.html with app.bundle.js included with it, but this time the rendering is already completed by the server. Your app.bundle.js won't modify or change anything in the page unless you have clicked something on the page.
 
