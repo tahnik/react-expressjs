@@ -224,7 +224,7 @@
 		function ShowListItem() {
 			_classCallCheck(this, ShowListItem);
 
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(ShowListItem).apply(this, arguments));
+			return _possibleConstructorReturn(this, (ShowListItem.__proto__ || Object.getPrototypeOf(ShowListItem)).apply(this, arguments));
 		}
 
 		_createClass(ShowListItem, [{
@@ -343,7 +343,7 @@
 	    function Header() {
 	        _classCallCheck(this, Header);
 
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Header).apply(this, arguments));
+	        return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
 	    }
 
 	    _createClass(Header, [{
@@ -405,7 +405,7 @@
 	    function Main() {
 	        _classCallCheck(this, Main);
 
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Main).apply(this, arguments));
+	        return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).apply(this, arguments));
 	    }
 
 	    _createClass(Main, [{
@@ -461,7 +461,7 @@
 	    function ListView() {
 	        _classCallCheck(this, ListView);
 
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(ListView).apply(this, arguments));
+	        return _possibleConstructorReturn(this, (ListView.__proto__ || Object.getPrototypeOf(ListView)).apply(this, arguments));
 	    }
 
 	    _createClass(ListView, [{
@@ -553,7 +553,7 @@
 	    function ListItem() {
 	        _classCallCheck(this, ListItem);
 
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(ListItem).apply(this, arguments));
+	        return _possibleConstructorReturn(this, (ListItem.__proto__ || Object.getPrototypeOf(ListItem)).apply(this, arguments));
 	    }
 
 	    _createClass(ListItem, [{
@@ -651,7 +651,7 @@
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 	exports.default = function () {
-	    var state = arguments.length <= 0 || arguments[0] === undefined ? INITIAL_STATE : arguments[0];
+	    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : INITIAL_STATE;
 	    var action = arguments[1];
 
 	    switch (action.type) {
