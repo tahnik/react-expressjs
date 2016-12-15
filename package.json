@@ -2,9 +2,9 @@
   "name": "generator-react-express-webpack-babel",
   "version": "2.2.0",
   "description": "Boilerplate for ReactJS project with ExpressJS server. It uses webpack and babel",
-  "main": "app.js",
+  "main": "server.bundle.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "node server.bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
