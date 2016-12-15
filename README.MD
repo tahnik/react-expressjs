@@ -11,6 +11,9 @@ This is a boilerplate to use ReactJS ExpressJS and Redux in a project.
 
 
 # Installation
+
+Node Version: v7.2.1
+
 Just close this repo or download the zip file. cd into the directory and run
 
     npm install
