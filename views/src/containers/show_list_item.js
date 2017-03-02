@@ -4,7 +4,7 @@ import { getListItem } from '../actions/list_actions';
 import { Link } from 'react-router';
 
 class ShowListItem extends Component {
-	componentWillMount(){
+	componentDidMount(){
 		this.props.getListItem(this.props.params.name);
 	}
 	render(){

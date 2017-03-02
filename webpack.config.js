@@ -11,17 +11,14 @@ module.exports = [
     module: {
         loaders: [{
             exclude: /node_modules/,
-            loader: 'babel',
+            loader: 'babel-loader',
             query: {
                 presets: ['react', 'es2015', 'stage-1']
             }
         }]
     },
     target: 'node',
-    externals: [nodeExternals()],
-    resolve: {
-        extensions: ['', '.js', '.jsx']
-    }
+    externals: [nodeExternals()]
     //If you want to minify your files uncomment this
     // ,
     // plugins: [
@@ -44,14 +41,11 @@ module.exports = [
         module: {
             loaders: [{
                 exclude: /node_modules/,
-                loader: 'babel',
+                loader: 'babel-loader',
                 query: {
                     presets: ['react', 'es2015', 'stage-1']
                 }
             }]
-        },
-        resolve: {
-            extensions: ['', '.js', '.jsx']
         }
         //If you want to minify your files uncomment this
         // ,

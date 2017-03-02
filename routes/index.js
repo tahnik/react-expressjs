@@ -1,36 +1,37 @@
-var express = require('express');
-var router = express.Router();
-var path = require("path");
-
-var React = require('react');
-
-import { renderToString } from 'react-dom/server';
+import express from 'express';
+import React from 'react';
+import ReactDOMServer from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
 import routes from '../views/src/routes';
-
 import reducers from '../views/src/reducers/index';
-
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import { ADD_ITEM } from '../views/src/actions/list_actions';
 
-router.get('/', function (req, res) {
+let router = express.Router();
+
+router.get('/', (req, res) => {
 	match({ routes, location: req.originalUrl }, (error, redirectLocation, renderProps) => {
 		if (error) {
 			res.status(500).send(error.message)
 		} else if (redirectLocation) {
 			res.redirect(302, redirectLocation.pathname + redirectLocation.search)
 		} else if (renderProps) {
-			// You can also check renderProps.components or renderProps.routes for
-			// your "not found" component or route respectively, and send a 404 as
-			// below, if you're using a catch-all route.
-
 			const store = createStore(reducers);
 
-			const html = renderToString(
+			const html = ReactDOMServer.renderToString(
 				<Provider store={store}>
 					<RouterContext {...renderProps} />
 				</Provider>
-			)
+			);
+
+			store.dispatch({
+			    type: ADD_ITEM,
+                payload: {
+			        name: 'Components',
+                    description: 'Description for components'
+                }
+            });
 
 			const finalState = store.getState();
 
@@ -51,6 +52,7 @@ function renderFullPage(html, initialState) {
     	<meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     	<meta http-equiv="x-ua-compatible" content="ie=edge">
+    	<title>React Router Redux Express</title>
 
     	<!-- Bootstrap CSS -->
     	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -72,5 +74,4 @@ function renderFullPage(html, initialState) {
     `
 }
 
-
-module.exports = router;
+export default router;
