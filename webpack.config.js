@@ -5,7 +5,7 @@ module.exports = [
     {
     entry: './server.js',
     output: {
-        path: './',
+        path: __dirname + '/',
         filename: 'server.bundle.js',
     },
     module: {
@@ -35,7 +35,7 @@ module.exports = [
     {
         entry: './views/index.js',
         output: {
-            path: './bin',
+            path: __dirname + '/bin',
             filename: 'app.bundle.js',
         },
         module: {
