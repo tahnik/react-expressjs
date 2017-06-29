@@ -28,6 +28,10 @@ Once you have the webpack installed, cd into the directory where you cloned this
 
     webpack
 
+Note: if you would rather not install webpack globally, you can also run webpack locally:
+
+    node_modules/.bin/webpack
+
 This will create update two files: `server.bundle.js` and `bin/app.bundle.js`.
 
 `server.bundle.js` will be used for serving the application on port 3000 and `app.bundle.js` is the actual react app itself.
