@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import { Router, browserHistory } from 'react-router';
-import reducers from './src/reducers/index';
-import routes from './src/routes';
+import reducers from './reducers/index';
+import App from './app';
+import {
+  BrowserRouter,
+} from 'react-router-dom';
 
 
 /*
@@ -16,8 +18,10 @@ const initialState = window.__INITIAL_STATE__;
 While creating a store, we will inject the initial state we received from the server to our app.
  */
 ReactDOM.render(
-    <Provider store={createStore(reducers, initialState)}>
-        <Router history={ browserHistory } routes={ routes } />
-    </Provider>,
-    document.getElementById("reactbody")
+  <Provider store={createStore(reducers, initialState)}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>,
+  document.getElementById('reactbody')
 );

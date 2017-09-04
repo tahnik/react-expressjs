@@ -1,28 +1,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getListItem } from '../actions/list_actions';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 class ShowListItem extends Component {
-	componentDidMount(){
-		this.props.getListItem(this.props.params.name);
-	}
-	render(){
-		const { item } = this.props;
-		if(!item) {
-			return (<div>Loading...</div>)
-		}
+  componentDidMount(){
+    console.log(this.props);
+    this.props.getListItem(this.props.match.params.name);
+  }
+  render(){
+    const { item } = this.props;
+    if(!item) {
+      return (<div>Loading...</div>);
+    }
 
-		return(
-			<div>
-				<Link to={"/"}>
-                    <button type="button" className="btn btn-primary" style={{ marginTop: 10, marginBottom: 10 }}>Go Back</button>
-                </Link>
-   				<h1>{ item.name }</h1>
-				<p>{ item.description }</p>
-   			</div>
-		)
-	}
+    return(
+      <div>
+        <Link to={'/'}>
+          <button type="button" className="btn btn-primary" style={{ marginTop: 10, marginBottom: 10 }}>Go Back</button>
+        </Link>
+        <h1>{ item.name }</h1>
+        <p>{ item.description }</p>
+      </div>
+    );
+  }
 }
 
 /*
@@ -32,9 +33,9 @@ class ShowListItem extends Component {
  Whenever this list changes, any component that is using this list of item will re-render.
  */
 function mapStateToProps(state){
-	return {
-		item: state.lists.item
-	}
+  return {
+    item: state.lists.item
+  };
 }
 
 /*
