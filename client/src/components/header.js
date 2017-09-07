@@ -5,7 +5,6 @@ class Header extends Component {
     return(
       <div style={{ marginTop: 20 }}>
         <h1>React Redux Router</h1>
-        { this.props.children }
       </div>
     );
   }
