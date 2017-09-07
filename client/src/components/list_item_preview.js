@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const ListItemPreview = ({ item }) => {
   if (!item) {
     return (
-      <div>
+      <div className="preview">
         <h3>Select an item</h3>
         <p>Description will appear here</p>
       </div>
@@ -13,11 +13,11 @@ const ListItemPreview = ({ item }) => {
   }
   return (
     <div className="preview">
-      <h3> { item.name } </h3>
+      <h2> { item.name } </h2>
       <p>{ item.description }</p>
-      <Route to={`view/${item.name}`}>
+      <Link to={`view/${item.name}`}>
         <button type="button" className="btn btn-primary">Read More</button>
-      </Route>
+      </Link>
     </div>
   );
 };

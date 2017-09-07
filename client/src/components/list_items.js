@@ -17,8 +17,8 @@ class ListView extends Component {
   }
   render() {
     return (
-      <div>
-        <ul className="list_items" >
+      <div className="list_items">
+        <ul>
           { this.renderList() }
         </ul>
       </div>

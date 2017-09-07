@@ -5,9 +5,9 @@ import { LISTS } from '../consts/default_state';
 export default (state = LISTS, action) => {
   switch (action.type) {
     case LIST_ACTIONS.ITEM_PREVIEW:
-      return { ...state, itemPreview: LIST_ITEMS[action.name] };
+      return { ...state, itemPreview: LIST_ITEMS[action.name.toUpperCase()] };
     case LIST_ACTIONS.ITEM_VIEW:
-      return { ...state, itemView: LIST_ITEMS[action.name] };
+      return { ...state, itemView: LIST_ITEMS[action.name.toUpperCase()] };
     case LIST_ACTIONS.ITEM_CLEAR:
       return { ...state, itemView: null };
     case LIST_ACTIONS.ITEM_ADD: {

@@ -1,0 +1,47 @@
+.home {
+  display: flex;
+  .list_items {
+    flex: 1;
+    padding: 1rem;
+  }
+  .preview {
+    flex: 2;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h2 {
+      text-transform: capitalize;
+      margin-top: 0;
+    }
+    p {
+      text-align: center;
+    }
+    button {
+      background-color: $color3;
+      font-size: 1rem;
+      &:hover {
+        background-color: $color4;
+      }
+    }
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    li {
+      margin: 0.5rem 0;
+      button {
+        background-color: $color1;
+        width: 100%;
+        font-size: 1.5rem;
+        transition: all 0.3s;
+        text-transform: capitalize;
+        &:hover {
+          cursor: pointer;
+          background-color: $color2;
+        }
+      }
+    }
+  }
+}

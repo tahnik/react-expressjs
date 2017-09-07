@@ -1,5 +1,42 @@
+@import './palette.scss';
 @import './home.scss';
+@import './view_item.scss';
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,600|Roboto:100,300');
 
 .reactbody {
-  background-color: #fff;
+  background-color: $color5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-weight: 300;
+}
+
+button {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  border: none;
+  outline:none;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  color: white;
+  transition: all 0.3s;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+div, p, span {
+  font-family: 'Raleway', sans-serif;
+}
+
+.header {
+  h1 {
+    text-align: center;
+  }
+  border-bottom: 2px solid gray;
 }
