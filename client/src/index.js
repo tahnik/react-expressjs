@@ -5,6 +5,7 @@ import { createStore } from 'redux';
 import {
   BrowserRouter,
 } from 'react-router-dom';
+import { AppContainer } from 'react-hot-loader';
 import reducers from './reducers/index';
 import App from './app';
 
@@ -17,11 +18,21 @@ const initialState = window.__INITIAL_STATE__; // eslint-disable-line
 /*
 While creating a store, we will inject the initial state we received from the server to our app.
  */
-ReactDOM.render(
-  <Provider store={createStore(reducers, initialState)}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </Provider>,
-  document.getElementById('reactbody'),
-);
+const render = (Component) => {
+  ReactDOM.render(
+    <AppContainer>
+      <Provider store={createStore(reducers, initialState)}>
+        <BrowserRouter>
+          <Component />
+        </BrowserRouter>
+      </Provider>
+    </AppContainer>,
+    document.getElementById('reactbody'),
+  );
+};
+
+render(App);
+
+module.hot.accept('./app.js', () => {
+  render(App);
+});

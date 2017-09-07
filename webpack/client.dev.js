@@ -1,20 +1,31 @@
 const path = require('path');
+const webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   context: path.join(__dirname, '../client'),
-  devtool: 'source-map',
+  devtool: 'inline-source-map',
   entry: [
+    'react-hot-loader/patch',
+    'webpack-dev-server/client?http://localhost:8080',
+    'webpack/hot/only-dev-server',
     './src/index.js',
     './res/scss/main.scss',
   ],
   output: {
     path: path.join(__dirname, '../server/public'),
     filename: './js/index.js',
+    publicPath: '/',
+  },
+  devServer: {
+    hot: true,
+    contentBase: path.join(__dirname, '../server/public'),
+    publicPath: '/',
+    historyApiFallback: true
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
@@ -26,14 +37,17 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader'],
-        }),
+        use: ['style-loader', 'css-loader', 'sass-loader']
       },
     ],
   },
   plugins: [
-    new ExtractTextPlugin('css/main.css'),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin(),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: path.join(__dirname, '../server/views/index.dev.ejs'),
+      inject: false,
+    }),
   ],
 };

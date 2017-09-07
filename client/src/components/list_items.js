@@ -18,7 +18,7 @@ class ListView extends Component {
   render() {
     return (
       <div>
-        <ul className="list-group col-sm-4" >
+        <ul className="list_items" >
           { this.renderList() }
         </ul>
       </div>

@@ -4,7 +4,8 @@
   "description": "Boilerplate for ReactJS project with ExpressJS server",
   "main": "server/bin/server.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack --config webpack/client.js && cross-env NODE_ENV=production webpack --config webpack/server.js",
+    "dev": "webpack-dev-server --config webpack/client.dev.js",
+    "build": "cross-env NODE_ENV=production webpack --config webpack/client.prod.js && cross-env NODE_ENV=production webpack --config webpack/server.prod.js",
     "start": "cd server && node bin/server.js",
     "lint": "eslint --ext .jsx,.js views"
   },
@@ -34,6 +35,7 @@
     "prop-types": "^15.5.10",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
+    "react-hot-loader": "^3.0.0-beta.7",
     "react-redux": "^5.0.3",
     "react-router": "^4.1.2",
     "react-router-dom": "^4.1.2",
@@ -52,12 +54,13 @@
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.3.0",
     "extract-text-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^2.30.1",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
-    "webpack-node-externals": "^1.2.0",
     "webpack": "^3.5.3",
-    "webpack-dev-server": "^2.4.1"
+    "webpack-dev-server": "^2.4.1",
+    "webpack-node-externals": "^1.2.0"
   },
   "bundledDependencies": [
     "cross-env",
