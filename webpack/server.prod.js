@@ -1,4 +1,5 @@
 const path = require('path');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
@@ -26,4 +27,9 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new UglifyJSPlugin({
+      sourceMap: true
+    }),
+  ]
 };
