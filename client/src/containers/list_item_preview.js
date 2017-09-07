@@ -9,7 +9,7 @@ import ListItemPreview from '../components/list_item_preview';
  */
 function mapStateToProps(state) {
   return {
-    activeItem: state.lists.item
+    item: state.list.itemPreview,
   };
 }
 

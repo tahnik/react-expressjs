@@ -15,7 +15,6 @@ class ListView extends Component {
       );
     });
   }
-
   render() {
     return (
       <div>
