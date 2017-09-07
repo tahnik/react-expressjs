@@ -9,7 +9,7 @@
     "build:server": "cross-env NODE_ENV=production webpack --config webpack/server.prod.js --progress",
     "build:client": "cross-env NODE_ENV=production webpack --config webpack/client.prod.js --progress",
     "start": "cd server && node bin/server.js",
-    "lint": "eslint --ext .jsx,.js views"
+    "lint": "eslint --ext .jsx,.js ./"
   },
   "repository": {
     "type": "git",

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-class ShowListItem extends Component {
+class ListItemView extends Component {
   componentDidMount() {
     const { viewItem, match } = this.props;
     viewItem(match.params.name);
@@ -24,4 +25,10 @@ class ShowListItem extends Component {
   }
 }
 
-export default ShowListItem;
+ListItemView.propTypes = {
+  viewItem: PropTypes.func.isRequired,
+  match: PropTypes.object.isRequired,
+  item: PropTypes.object.isRequired,
+};
+
+export default ListItemView;
