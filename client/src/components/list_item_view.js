@@ -28,7 +28,11 @@ class ListItemView extends Component {
 ListItemView.propTypes = {
   viewItem: PropTypes.func.isRequired,
   match: PropTypes.object.isRequired,
-  item: PropTypes.object.isRequired,
+  item: PropTypes.object,
+};
+
+ListItemView.defaultProps = {
+  item: null,
 };
 
 export default ListItemView;

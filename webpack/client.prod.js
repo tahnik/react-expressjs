@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -12,6 +13,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, '../server/public'),
     filename: './js/index.js',
+    publicPath: '/',
   },
   module: {
     rules: [{
@@ -33,18 +35,21 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              outputPath: 'images/',
-            }  
+        use: [{
+          loader: 'file-loader',
+          options: {
+            outputPath: 'images/',
           }
-        ]
+        }]
       },
     ],
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
     new UglifyJSPlugin({
       sourceMap: true
     }),
