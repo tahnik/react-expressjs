@@ -36,7 +36,7 @@ router.get('/', (req, res) => {
   store.dispatch({
     type: LIST_ACTIONS.ITEM_ADD,
     item: {
-      name: 'Middleware',
+      name: 'middleware',
       description: `Redux middleware solves different problems than Express or Koa middleware, but in a conceptually similar way.
       It provides a third-party extension point between dispatching an action, and the moment it reaches the reducer.`,
     },

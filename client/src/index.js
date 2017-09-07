@@ -35,11 +35,13 @@ const render = (Component) => {
 
 render(App);
 
-module.hot.accept('./app', () => {
-  // eslint-disable-next-line
-  const nextApp = require('./app').default;
-  render(nextApp);
-});
+if (module.hot) {
+  module.hot.accept('./app', () => {
+    // eslint-disable-next-line
+    const nextApp = require('./app').default;
+    render(nextApp);
+  });
+}
 
 // module.hot.accept('./reducers', () => {
 //   // eslint-disable-next-line

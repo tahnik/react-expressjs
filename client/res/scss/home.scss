@@ -19,11 +19,7 @@
       text-align: center;
     }
     button {
-      background-color: $color3;
       font-size: 1rem;
-      &:hover {
-        background-color: $color4;
-      }
     }
   }
   ul {
@@ -32,14 +28,12 @@
     li {
       margin: 0.5rem 0;
       button {
-        background-color: $color1;
         width: 100%;
         font-size: 1.5rem;
         transition: all 0.3s;
         text-transform: capitalize;
         &:hover {
           cursor: pointer;
-          background-color: $color2;
         }
       }
     }

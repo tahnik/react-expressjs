@@ -20,7 +20,6 @@ module.exports = {
   },
   devServer: {
     hot: true,
-    contentBase: path.join(__dirname, '../server/public'),
     publicPath: '/',
     historyApiFallback: true
   },
