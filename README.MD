@@ -1,5 +1,6 @@
 # Behold the ReactJS + ExpressJS Boilerplate
-## With Server-side rendering, Redux and React-router v4
+
+I wrote an [article] about this repo which explains the structure.
 
 This is a boilerplate to use ReactJS, ExpressJS, Redux and React Router v4 in a project.
 
@@ -56,3 +57,4 @@ Remember that you have to run `npm run build` before doing this. This will creat
 [ExpressJS]: <http://expressjs.com/>
 [Redux]: <http://redux.js.org/>
 [pm2]: <https://github.com/Unitech/pm2>
+[article]: <https://medium.com/@tahnik.mstsn/reactjs-expressjs-with-hot-reloading-and-server-side-rendering-901a01ea2711>
