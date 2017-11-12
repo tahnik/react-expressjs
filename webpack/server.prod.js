@@ -9,6 +9,7 @@ module.exports = {
   entry: [
     './routes/index.js',
   ],
+  target: 'node',
   output: {
     path: path.join(__dirname, '../server/bin'),
     filename: './server.js',
