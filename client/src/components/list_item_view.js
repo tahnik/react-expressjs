@@ -15,7 +15,7 @@ class ListItemView extends Component {
 
     return (
       <div className="view_item">
-        <Link to={'/'}>
+        <Link to="/">
           <button type="button">Back</button>
         </Link>
         <h2>{ item.name }</h2>

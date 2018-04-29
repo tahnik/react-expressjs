@@ -4,7 +4,12 @@
       "react/jsx-filename-extension": [1, {
         "extensions": [".js", ".jsx"]
       }],
-      "react/forbid-prop-types": 0
+      "react/forbid-prop-types": 0,
+      "function-paren-newline": ["error", "consistent"],
+      "jsx-a11y/anchor-is-valid": [ "error", {
+        "components": [ "Link" ],
+        "specialLink": [ "to" ]
+      }]
     },
     "env": {
       "es6": true,
