@@ -13,6 +13,7 @@ module.exports = {
     './src/index.js',
     './res/scss/main.scss',
   ],
+  mode: 'development',
   output: {
     path: path.join(__dirname, '../server/public'),
     filename: './js/index.js',

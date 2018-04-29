@@ -10,6 +10,7 @@ module.exports = {
     './src/index.js',
     './res/scss/main.scss',
   ],
+  mode: 'production',
   output: {
     path: path.join(__dirname, '../server/public'),
     filename: './js/index.js',
