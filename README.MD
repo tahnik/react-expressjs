@@ -14,7 +14,7 @@ This is a boilerplate to use ReactJS, ExpressJS, Redux and React Router v4 in a 
 
 # Installation
 
-Node Version: v8.3.0
+Node Version: v9.0.0^
 
 Just clone this repo or download the zip file. `cd` into the directory and run
 
