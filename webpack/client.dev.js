@@ -31,7 +31,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['react', 'es2015', 'stage-1'],
+            presets: ['@babel/react'],
           },
         },
       },
@@ -44,7 +44,7 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
-            options: {}  
+            options: {}
           }
         ]
       },
