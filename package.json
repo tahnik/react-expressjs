@@ -33,7 +33,7 @@
   "dependencies": {
     "cross-env": "^5.2.0",
     "ejs": "^2.6.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "npm": "^6.9.0",
     "npm-upgrade": "^1.4.1",
     "prop-types": "^15.7.2",
